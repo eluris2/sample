@@ -1,0 +1,33 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    displayName: 'Build Job'
+    steps:
+    - script: |
+        echo "Building the application..."
+        # Add your build commands here
+
+- stage: Test
+  jobs:
+  - job: Test
+    displayName: 'Test Job'
+    steps:
+    - script: |
+        echo "Running tests..."
+        # Add your test commands here
+
+- stage: Deploy
+  jobs:
+  - job: Deploy
+    displayName: 'Deploy Job'
+    steps:
+    - script: |
+        echo "Deploying the application..."
+        # Add your deployment commands here
